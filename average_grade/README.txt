@@ -1,0 +1,1 @@
+this is a program that takes ten of your most recent test scores averages them and gives you a grade based on the percentage
