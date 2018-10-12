@@ -1,0 +1,1 @@
+this is a formatted clock that has an alarm and an exit hot key 
