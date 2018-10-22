@@ -5,36 +5,41 @@ attack=0
 secret=""
 kraken=""
 
+
+def askQuestion(question, option1="", option2="", option3="",var=""):
+    x=input(question+" "+var).lower()
+    options = option1+","+option2+ ","+option3
+    while x not in  options:
+         x=input(question)
+    return  x
+        
+
+#plains function
 def plains():
     print("""
 #####  #        ##   # #    #  ####  
 #    # #       #  #  # ##   # #      
-#    # #      #    # # # #  #  ####  
+#    # #      #    # # # #  #  ####  weakness
 #####  #      ###### # #  # #      # 
 #      #      #    # # #   ## #    # 
 #      ###### #    # # #    #  ####  """)
     print("""\nyou are wandering around in the open plains with grass all
 around you see a town in the distance and mountains on the horizon
 but you could also stay in the plains and explore""")
-    x=1
-    while x==1:
-        direction=input("\nwhere would you like to go 'Mountains, plains, town'")
-        if direction.lower()=="mountains":
-            x=2
-            print("\nyou decide to move towards the mountains")
-            mountains()
-        elif direction.lower()=="town":
-            x=2
-            print("\nyou decide to move towards the Town")
-            town()
-        elif direction.lower()=="plains":
-            x=2
-            print("\nyou stay in the plains and over time the endless grass bores you to death")
-            game_over()
-        else:
-            print("we don't recognise that place")
-            kraken_attack()
+    direction=askQuestion("where would you like to go 'Mountains, plains, town'","mountains","town","plains")
+    if direction=="mountains":
+        print("\nyou decide to move towards the mountains")
+        mountains()
+    elif direction=="town":
+        print("\nyou decide to move towards the Town")
+        town()
+    elif direction=="plains":
+        print("\nyou stay in the plains and over time the endless grass bores you to death")
+        game_over()
     
+            
+
+#town function
 def town():
     print("""
 #####  ####  #    # #    # 
@@ -59,7 +64,8 @@ east looks run down with not much to do while the west has stores and inns """)
             east_town()
         else:
             print("which way are you going")
-            
+
+#west_ town function         
 def west_town():
     print("""
 #    #   ##   #####  #    # ###### ##### 
@@ -91,7 +97,7 @@ they immediately slit your throat before you can even regret your decision to en
         else:
             print("which building")
 
-            
+#store function      
 def store():
     print("""
  ####  #####  ####  #####  ###### 
@@ -124,7 +130,7 @@ do you want to steal it or buy it""")
         else:
             print("that's not a choice")
 
-    
+#inn function
 def inn():
     print("""
 # #    # #    # 
@@ -152,7 +158,7 @@ offers you a job and you take it, living out the rest of your days in the town""
             print("I didn't get that")
     
 
-    
+# east town function
 def east_town():
     print("""
  ####  #      #    # #    #  ####  
@@ -180,7 +186,7 @@ you see a hermit hiding in an alleyway talking to himself""")
             plains()
         else:
             print("I didn't get that")
-            
+#bar function
 def bar():
     print("""
 #####    ##   #####  
@@ -206,7 +212,7 @@ as you aproac the barkeep you ead a sign that says no fighting""")
             game_over()
         else:
             print("what did you say")
-        
+#mountain Function
 def mountains():
     print("""
 #    #  ####  #    # #    # #####   ##   # #    #  ####  
@@ -231,7 +237,7 @@ and another leading to what seems to be the beach""")
             beach()
         else:
           print("i didn't get that")
-
+#mountain path function
 def mountain_path():
     print("""
 #####  ######   ##   #    # 
@@ -269,7 +275,9 @@ and you feel like there should be something more""",secret)
             win()
         else:
             print("say that again")
+
             
+# beach function
 def beach():
     print("""
 #####  ######   ##    ####  #    # 
@@ -300,6 +308,7 @@ the warm sand is very alluring and you feel compelled to sleep""")
         else:
             print("what did you say")
 
+#boat function
 def boat():
     print("""
 #    # #####    ##   #    # ###### #    # 
@@ -315,7 +324,7 @@ but after a while at sea you are attacked by a kraken""")
     x=1
     while x==1:
         print("attack, flee",kraken)
-        kraken_choice=input()
+        kraken_choice=askQuestion("attack,flee","attack","flee","",kraken)
         if kraken_choice.lower()=="attack":
             x=2
             print("you start the attack")
@@ -335,7 +344,7 @@ but after a while at sea you are attacked by a kraken""")
 #    # # #####  #####  ###### #    # """)
             print("you found the second secret ending \n you scare off the kraken by throwing garlic at it whenever one hits it drives the kraken insane until it runs away\n they crew members see you as a hero and you join their crew permenantly")
 
-            
+ # attack sequence           
 def kraken_attack():
     print("""
   ##   ##### #####   ##    ####  #    # 
@@ -378,7 +387,9 @@ def kraken_attack():
             x=2
             print("the ship took heavy damage while you were being attacked and the crew blamed you  and so they hung you")
             game_over()
-        
+
+
+#cave function
 def cave():
     print("""
  ####    ##   #    # ###### 
@@ -439,13 +450,17 @@ def cave():
                     print("I didn't get that")
         else:
             print("I didn't get that")
+
+#end cave function
 def cave_end():
     print("you make it to the end of the cave learning the krakens secret from a dead skeletons possesions")
     global kraken
     kraken="weakness"
     print("you return to the beach following the path you entered")
     beach()
-          
+
+
+#game_over function
 def game_over():
     global attack
     global secret
@@ -472,6 +487,7 @@ def game_over():
         else:
             print("I didn't get that")
 
+#win function
 def win():
     global attack
     global secret
@@ -498,7 +514,7 @@ def win():
         else:
             print("I didn't get that")
 
-    
+# main function   
 def main():
     print("welcome to the game")
     print("""
