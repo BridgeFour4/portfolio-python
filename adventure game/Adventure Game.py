@@ -1,12 +1,14 @@
 #nathan Broadbent
 #10/18
 import random
+from asciiart import *
 attack=0
 secret=""
 kraken=""
 
 
-def askQuestion(question, option1="", option2="", option3="",var=""):
+def askQuestion(question="default question", option1="", option2="", option3="",var=""):
+    """to take parameters and get a correct response"""
     x=input(question+" "+var).lower()
     options = option1+","+option2+ ","+option3
     while x not in  options:
@@ -16,13 +18,7 @@ def askQuestion(question, option1="", option2="", option3="",var=""):
 
 #plains function
 def plains():
-    print("""
-#####  #        ##   # #    #  ####  
-#    # #       #  #  # ##   # #      
-#    # #      #    # # # #  #  ####  weakness
-#####  #      ###### # #  # #      # 
-#      #      #    # # #   ## #    # 
-#      ###### #    # # #    #  ####  """)
+    print(plain)#found in ascii file
     print("""\nyou are wandering around in the open plains with grass all
 around you see a town in the distance and mountains on the horizon
 but you could also stay in the plains and explore""")
@@ -41,40 +37,22 @@ but you could also stay in the plains and explore""")
 
 #town function
 def town():
-    print("""
-#####  ####  #    # #    # 
-  #   #    # #    # ##   # 
-  #   #    # #    # # #  # 
-  #   #    # # ## # #  # # 
-  #   #    # ##  ## #   ## 
-  #    ####  #    # #    #""")
+    print(town)
     print("""\n The guards to town nod as you walk past asking you not to cause any trouble while you're here
 as you look around you see that there are to parts to the town west and east
 east looks run down with not much to do while the west has stores and inns """)
-    x=1
-    while x==1:
-        town_choice=input("west or east")
-        if town_choice.lower()=="west":
-            x=2
-            print("\nyou move on to west side of town")
-            west_town()
-        elif town_choice.lower()=="east":
-            x=2
-            print("\nyou move on to east side of town")
-            east_town()
-        else:
-            print("which way are you going")
+    town_choice=askQuestion("west, east","west","east")
+    if town_choice=="west":
+        print("\nyou move on to west side of town")
+        west_town()
+    elif town_choice=="east":
+        print("\nyou move on to east side of town")
+        east_town()
+
 
 #west_ town function         
 def west_town():
-    print("""
-#    #   ##   #####  #    # ###### ##### 
-##  ##  #  #  #    # #   #  #        #   
-# ## # #    # #    # ####   #####    #   
-#    # ###### #####  #  #   #        #   
-#    # #    # #   #  #   #  #        #   
-#    # #    # #    # #    # ######   #  """)
-    
+    print(west_town)
     print(""" \nas you walk into the west side of town  you notice all of the buiding are upkept and neat
 the store is open and the inn looks inviting there the entire area is inviting
 except for one warehouse at the end of the street that place looks scary""")
@@ -539,5 +517,5 @@ def main():
         else:
             print("try again")
              
-        
+help (askQuestion)      
 main()
