@@ -61,6 +61,14 @@ east looks run down with not much to do while the west has stores and inns """)
             print("which way are you going")
             
 def west_town():
+    print("""
+#    #   ##   #####  #    # ###### ##### 
+##  ##  #  #  #    # #   #  #        #   
+# ## # #    # #    # ####   #####    #   
+#    # ###### #####  #  #   #        #   
+#    # #    # #   #  #   #  #        #   
+#    # #    # #    # #    # ######   #  """)
+    
     print(""" \nas you walk into the west side of town  you notice all of the buiding are upkept and neat
 the store is open and the inn looks inviting there the entire area is inviting
 except for one warehouse at the end of the street that place looks scary""")
@@ -85,7 +93,13 @@ they immediately slit your throat before you can even regret your decision to en
 
             
 def store():
-    
+    print("""
+ ####  #####  ####  #####  ###### 
+#        #   #    # #    # #      
+ ####    #   #    # #    # #####  
+     #   #   #    # #####  #      
+#    #   #   #    # #   #  #      
+ ####    #    ####  #    # ###### """)
     print("""\nyou walk into the store and
 the shopkeeper a little, old woman welcomes you into her shop
 you immeadiately see a shiny sword that will help you on your quest
@@ -112,6 +126,13 @@ do you want to steal it or buy it""")
 
     
 def inn():
+    print("""
+# #    # #    # 
+# ##   # ##   # 
+# # #  # # #  # 
+# #  # # #  # # 
+# #   ## #   ## 
+# #    # #    #""")
     print("""\nyou enter the inn and talk to the inn keeper
 he will give you food and room for the night
 or you could punch him in the face""")
@@ -133,6 +154,13 @@ offers you a job and you take it, living out the rest of your days in the town""
 
     
 def east_town():
+    print("""
+ ####  #      #    # #    #  ####  
+#      #      #    # ##  ## #      
+ ####  #      #    # # ## #  ####  
+     # #      #    # #    #      # 
+#    # #      #    # #    # #    # 
+ ####  ######  ####  #    #  #### """)
     print("""\n you decide to enter the east side off town and you see a bar nearby
 you think that might be a good place to go but out off the corner of your eye
 you see a hermit hiding in an alleyway talking to himself""")
@@ -154,6 +182,14 @@ you see a hermit hiding in an alleyway talking to himself""")
             print("I didn't get that")
             
 def bar():
+    print("""
+#####    ##   #####  
+#    #  #  #  #    # 
+#####  #    # #    # 
+#    # ###### #####  
+#    # #    # #   #  
+#####  #    # #    #
+""")
     print("""\nAs you enter the bar you see several groups of people
 so far gone that they can't even remember their own name
 as you aproac the barkeep you ead a sign that says no fighting""")
@@ -197,6 +233,13 @@ and another leading to what seems to be the beach""")
           print("i didn't get that")
 
 def mountain_path():
+    print("""
+#####  ######   ##   #    # 
+#    # #       #  #  #   #  
+#    # #####  #    # ####   
+#####  #      ###### #  #   
+#      #      #    # #   #  
+#      ###### #    # #    #""")
     global secret
     print("""\n you finally arrive at the mountain and you look to the peak and start climbing
 after a while you notice a spring  and wonder if you should stop for a break
@@ -251,6 +294,13 @@ the warm sand is very alluring and you feel compelled to sleep""")
             print("what did you say")
 
 def boat():
+    print("""
+#    # #####    ##   #    # ###### #    # 
+#   #  #    #  #  #  #   #  #      ##   # 
+####   #    # #    # ####   #####  # #  # 
+#  #   #####  ###### #  #   #      #  # # 
+#   #  #   #  #    # #   #  #      #   ## 
+#    # #    # #    # #    # ###### #    #""")
     global kraken
     print("""\n you choose to help the sailors load up their ship and they
 offer to give you a ride to where ever you want to go
@@ -273,6 +323,13 @@ but after a while at sea you are attacked by a kraken""")
 
             
 def kraken_attack():
+    print("""
+  ##   ##### #####   ##    ####  #    # 
+ #  #    #     #    #  #  #    # #   #  
+#    #   #     #   #    # #      ####   
+######   #     #   ###### #      #  #   
+#    #   #     #   #    # #    # #   #  
+#    #   #     #   #    #  ####  #    # """)
     global attack
     print("you start the assault on the kraken")
     pHealth=30
@@ -302,8 +359,19 @@ def kraken_attack():
             x=2
             print("you die and the ship is doomed")
             game_over()
+        flee=input("would you like to flee y/n")
+        if flee=="y":
+            x=2
+            print("the ship took heavy damage while you were being attacked and the crew blamed you  and so they hung you")
         
 def cave():
+    print("""
+ ####    ##   #    # ###### 
+#    #  #  #  #    # #      
+#      #    # #    # #####  
+#      ###### #    # #      
+#    # #    #  #  #  #      
+ ####  #    #   ##   ######""")
     print("\n you enter the cave and see three paths stretching in front of you")
     x=1
     while x==1:
