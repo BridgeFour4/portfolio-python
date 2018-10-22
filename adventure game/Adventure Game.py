@@ -363,6 +363,7 @@ def kraken_attack():
         if flee=="y":
             x=2
             print("the ship took heavy damage while you were being attacked and the crew blamed you  and so they hung you")
+            game_over()
         
 def cave():
     print("""
