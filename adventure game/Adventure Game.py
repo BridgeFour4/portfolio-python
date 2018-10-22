@@ -246,7 +246,7 @@ after a while you notice a spring  and wonder if you should stop for a break
 and you feel like there should be something more""",secret)
     x=1
     while x==1:
-        path_choice==input("peak or spring")
+        path_choice=input("peak or spring")
 
         if path_choice.lower()=="peak":
             x=2
@@ -258,6 +258,13 @@ and you feel like there should be something more""",secret)
             win()
         elif path_choice.lower()=="hidden":
             x=2
+            print("""
+#    # # #####  #####  ###### #    # 
+#    # # #    # #    # #      ##   # 
+###### # #    # #    # #####  # #  # 
+#    # # #    # #    # #      #  # # 
+#    # # #    # #    # #      #   ## 
+#    # # #####  #####  ###### #    # """)
             print("Congratulations you found one of the secret hidden endings \nthe cave is filled with gold bars and enough food to last the rest of your life")
             win()
         else:
@@ -319,6 +326,13 @@ but after a while at sea you are attacked by a kraken""")
             game_over()
         elif kraken_choice.lower()==kraken:
             x=2
+            print("""
+#    # # #####  #####  ###### #    # 
+#    # # #    # #    # #      ##   # 
+###### # #    # #    # #####  # #  # 
+#    # # #    # #    # #      #  # # 
+#    # # #    # #    # #      #   ## 
+#    # # #####  #####  ###### #    # """)
             print("you found the second secret ending \n you scare off the kraken by throwing garlic at it whenever one hits it drives the kraken insane until it runs away\n they crew members see you as a hero and you join their crew permenantly")
 
             
