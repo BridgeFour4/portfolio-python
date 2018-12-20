@@ -1,0 +1,1 @@
+creates a deck then shuffles the deck and hands out 5 cards to each player
