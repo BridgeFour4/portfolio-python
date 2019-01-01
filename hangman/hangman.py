@@ -173,7 +173,7 @@ def game():
             if value=="win":
                 soFar=word
             else:
-                print("ded")
+                print("dead")
                 wrong=MAX_WRONG
         else:
                 print("continue then")
