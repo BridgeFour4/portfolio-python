@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Role_picker.iml" filepath="$PROJECT_DIR$/.idea/Role_picker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../War/.idea/War.iml" filepath="$PROJECT_DIR$/../War/.idea/War.iml" />
+    </modules>
+  </component>
+</project>
