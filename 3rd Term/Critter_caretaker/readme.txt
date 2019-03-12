@@ -1,0 +1,1 @@
+this is a simualted pet program it will kepp track of how long it is open and use that time to affect values
