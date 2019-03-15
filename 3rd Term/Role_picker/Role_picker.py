@@ -9,6 +9,7 @@ class Person(object):
     def __init__(self,name):
         self.name=name
         self.role=[]
+        self.bias="";
 
     def display_roles(self):
         print(self.name)
@@ -52,25 +53,87 @@ def ask_yes_no(question):
 
 def assign_roles(weeks,people,roles):
     week=1
+    roles2nd=[]
     for i in range(weeks):
-        random.shuffle(roles)
-        x=0
+        z=0
         if len(people)>len(roles):
+            roles2nd = []
+            for i in roles:
+                roles2nd.append(i)
             for i in range(len(people)):
-                people[i].role.append(roles[x])
-                x+=1
-                if x ==len(roles):
-                    x=0
+                print(roles2nd)
+                if len(roles)==1:
+                    people[i].role.append(roles[0])
+                    continue
+                else:
+                    try:
+                        roles2nd.remove(people[i].bias)
+                        p=1
+                    except:
+                        print()
+                        p=0
+                    if len(roles2nd)==0:
+                        roles2nd.append(people[i].bias)
+                    x=random.choice(roles2nd)
+                    people[i].role.append(x)
+                    roles2nd.remove(x)
+                    if people[i].bias !="" and p==1:
+                        roles2nd.append(people[i].bias)
+                    if len(roles2nd)==0:
+                        for role in roles:
+                            roles2nd.append(role)
+                    people[i].bias = x
+
         elif len(roles)>len(people):
+            roles2nd = []
+            for i in roles:
+                roles2nd.append(i)
             for i in range(len(roles)):
-                people[x].role.append(roles[i])
-                x+=1
-                if x ==len(people):
-                    x=0
+                print(roles2nd)
+                try:
+                    roles2nd.remove(people[z].bias)
+                    p = 1
+                except:
+                    print()
+                    p = 0
+                if len(roles2nd) == 0:
+                    roles2nd.append(people[z].bias)
+                x = random.choice(roles2nd)
+                people[z].role.append(x)
+                roles2nd.remove(x)
+                if people[z].bias != "" and p == 1:
+                    roles2nd.append(people[z].bias)
+                people[z].bias = x
+                z+=1
+                if z ==len(people):
+                    z=0
         else:
-            for i in people:
-                i.role.append(roles[x])
-                x += 1
+            roles2nd=[]
+            for i in roles:
+                roles2nd.append(i)
+            for person in people:
+                if len(people)==1:
+                    person.role.append(Roles2nd[0])
+                    continue
+                else:
+                    print(roles2nd)
+                    try:
+                        roles2nd.remove(person.bias)
+                        p=1
+                    except:
+                        print()
+                        p=0
+                    if len(roles2nd)==0:
+                        roles2nd.append(person.bias)
+                    x=random.choice(roles2nd)
+                    person.role.append(x)
+                    roles2nd.remove(x)
+                    if person.bias !="" and p==1:
+                        roles2nd.append(person.bias)
+                    person.bias = x
+
+
+
 
         print("\nWeek",week,"\n")
         week+=1
